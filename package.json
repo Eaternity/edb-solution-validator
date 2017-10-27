@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "Edb-solution validator",
-  "main": "index.js",
+  "main": "dist/index.js",
   "lint-staged": {
     "src/**/*.js": ["npm run build", "eslint --fix", "git add"]
   },
