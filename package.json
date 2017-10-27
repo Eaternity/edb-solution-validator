@@ -1,5 +1,6 @@
 {
   "name": "edb-solution-validator",
+  "private": true,
   "version": "1.0.0",
   "description": "Edb-solution validator",
   "main": "index.js",
