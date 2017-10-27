@@ -13,7 +13,7 @@ export const addFilename = (product, filename) => {
 }
 
 export const isValidProductFilename = filename => {
-  // http://regexr.com/ is awesome!
+    // http://regexr.com/ is awesome!
   const filenameRegEx = /^\d.+(prod\.json)/g
   return filenameRegEx.test(filename)
 }
@@ -65,13 +65,11 @@ export const loadNutrs = dataDir => {
 export const loadNutrChange = dataDir => {
   const filenames = fs.readdirSync(`${dataDir}/nutr-change`)
   const nutrChange = filenames
-    .filter(filename => {
-      const filenameRegEx = /^.+(nutr-change\.json)/g
-      return filenameRegEx.test(filename)
-    })
-    .map(filename =>
-      jsonfile.readFileSync(`${dataDir}/nutr-change/${filename}`)
-    )
+  .filter(filename => {
+    const filenameRegEx = /^.+(nutr-change\.json)/g
+    return filenameRegEx.test(filename)
+  })
+  .map(filename => jsonfile.readFileSync(`${dataDir}/nutr-change/${filename}`))
 
   return nutrChange
 }
@@ -111,7 +109,7 @@ export const saveAllProducts = (dataDir, prods) => {
 
 const _saveAllProductsToCsv = (fields, dataDir, prods) => {
   const filename = 'EDB_Products-Export.csv'
-  const result = json2csv({data: prods, fields: fields})
+  const result = json2csv({ data: prods, fields: fields })
   fs.writeFileSync(`${dataDir}/${filename}`, result)
   return result
 }
