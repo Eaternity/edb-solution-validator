@@ -96,7 +96,7 @@ export const resetValidation = product => {
 export const _saveProduct = (removeHelperFields, dataDir, product) => {
   const {filename} = product
   const cleanProduct = removeHelperFields(product)
-  jsonfile.writeFileSync(`${dataDir}/prods/${filename}`, cleanProduct)
+  jsonfile.writeFileSync(`${dataDir}/prods/${filename}`, cleanProduct, {spaces: 2})
 }
 
 // Hey future me: what's the (dis)advantage of doing this vs. just using
@@ -106,7 +106,7 @@ const curriedSaveProduct = curry(_saveProduct)
 export const saveProduct = curriedSaveProduct(removeHelperFields)
 
 export const saveAllProducts = (dataDir, prods) => {
-  jsonfile.writeFileSync(`${dataDir}/prods.all.json`, prods)
+  jsonfile.writeFileSync(`${dataDir}/prods.all.json`, prods, {spaces: 2})
 }
 
 const _saveAllProductsToCsv = (fields, dataDir, prods) => {
