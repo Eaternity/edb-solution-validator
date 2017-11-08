@@ -5,7 +5,7 @@ import {loadAllProducts, loadProductSchema, saveAllProducts} from './validator/h
 
 import {orderProduct} from './validator/validator'
 
-const dataDir = path.resolve(`${__dirname}`, '../eaternity-edb-data')
+const dataDir = path.resolve(`${__dirname}`, '../../eaternity-edb-data')
 
 const products = loadAllProducts(dataDir)
 
