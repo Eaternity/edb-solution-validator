@@ -23,9 +23,6 @@ var _json2csv2 = _interopRequireDefault(_json2csv);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// set indentation for jsonfile
-_jsonfile2.default.spaces = 2;
-
 var addFilename = exports.addFilename = function addFilename(product, filename) {
   if (product) {
     return Object.assign({}, product, { filename: filename });
@@ -115,7 +112,9 @@ var _saveProduct = exports._saveProduct = function _saveProduct(removeHelperFiel
   var filename = product.filename;
 
   var cleanProduct = removeHelperFields(product);
-  _jsonfile2.default.writeFileSync(dataDir + '/prods/' + filename, cleanProduct);
+  _jsonfile2.default.writeFileSync(dataDir + '/prods/' + filename, cleanProduct, {
+    spaces: 2
+  });
 };
 
 // Hey future me: what's the (dis)advantage of doing this vs. just using
@@ -125,7 +124,7 @@ var curriedSaveProduct = (0, _ramda.curry)(_saveProduct);
 var saveProduct = exports.saveProduct = curriedSaveProduct(removeHelperFields);
 
 var saveAllProducts = exports.saveAllProducts = function saveAllProducts(dataDir, prods) {
-  _jsonfile2.default.writeFileSync(dataDir + '/prods.all.json', prods);
+  _jsonfile2.default.writeFileSync(dataDir + '/prods.all.json', prods, { spaces: 2 });
 };
 
 var _saveAllProductsToCsv = function _saveAllProductsToCsv(fields, dataDir, prods) {

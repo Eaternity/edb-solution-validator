@@ -32,6 +32,8 @@ var validateProduct = (0, _ramda.pipe)((0, _validator.orderProduct)(enhancedKeys
 
 // run for a single product
 var product = products[10];
-// console.log(product)
+product.name = 'hey';
 validateProduct(product);
+
+// saveProduct(dataDir, product)
 //# sourceMappingURL=debug.js.map
