@@ -3,9 +3,6 @@ import jsonfile from 'jsonfile'
 import {curry} from 'ramda'
 import json2csv from 'json2csv'
 
-// set indentation for jsonfile
-jsonfile.spaces = 2
-
 export const addFilename = (product, filename) => {
   if (product) {
     return Object.assign({}, product, {filename})
@@ -13,7 +10,7 @@ export const addFilename = (product, filename) => {
 }
 
 export const isValidProductFilename = filename => {
-    // http://regexr.com/ is awesome!
+  // http://regexr.com/ is awesome!
   const filenameRegEx = /^\d.+(prod\.json)/g
   return filenameRegEx.test(filename)
 }
@@ -65,11 +62,13 @@ export const loadNutrs = dataDir => {
 export const loadNutrChange = dataDir => {
   const filenames = fs.readdirSync(`${dataDir}/nutr-change`)
   const nutrChange = filenames
-  .filter(filename => {
-    const filenameRegEx = /^.+(nutr-change\.json)/g
-    return filenameRegEx.test(filename)
-  })
-  .map(filename => jsonfile.readFileSync(`${dataDir}/nutr-change/${filename}`))
+    .filter(filename => {
+      const filenameRegEx = /^.+(nutr-change\.json)/g
+      return filenameRegEx.test(filename)
+    })
+    .map(filename =>
+      jsonfile.readFileSync(`${dataDir}/nutr-change/${filename}`)
+    )
 
   return nutrChange
 }
@@ -94,7 +93,9 @@ export const resetValidation = product => {
 export const _saveProduct = (removeHelperFields, dataDir, product) => {
   const {filename} = product
   const cleanProduct = removeHelperFields(product)
-  jsonfile.writeFileSync(`${dataDir}/prods/${filename}`, cleanProduct, {spaces: 2})
+  jsonfile.writeFileSync(`${dataDir}/prods/${filename}`, cleanProduct, {
+    spaces: 2
+  })
 }
 
 // Hey future me: what's the (dis)advantage of doing this vs. just using
@@ -109,7 +110,7 @@ export const saveAllProducts = (dataDir, prods) => {
 
 const _saveAllProductsToCsv = (fields, dataDir, prods) => {
   const filename = 'EDB_Products-Export.csv'
-  const result = json2csv({ data: prods, fields: fields })
+  const result = json2csv({data: prods, fields: fields})
   fs.writeFileSync(`${dataDir}/${filename}`, result)
   return result
 }
