@@ -1,11 +1,11 @@
 import {pipe} from 'ramda'
 import path from 'path'
 
-import {loadAllProducts, loadProductSchema} from './validator/helpers/helpers'
+import {loadAllProducts, loadProductSchema, saveAllProducts} from './validator/helpers/helpers'
 
 import {orderProduct} from './validator/validator'
 
-const dataDir = path.resolve(`${__dirname}`, '../eaternity-edb-data')
+const dataDir = path.resolve(`${__dirname}`, '../../eaternity-edb-data')
 
 const products = loadAllProducts(dataDir)
 
@@ -25,3 +25,5 @@ const validateProduct = pipe(orderProduct(enhancedKeys))
 const product = products[10]
 // console.log(product)
 validateProduct(product)
+
+saveAllProducts(dataDir, products)
