@@ -23,10 +23,9 @@ import {
   classify,
   getFieldFromParent,
   pullFieldsFromParent,
-  pullAndAddFieldsFromParent
+  pullAndAddFieldsFromParent,
+  ALL_FIELDS_FROM_LINKED_PRODUCT
 } from './validator'
-import {OPTIONAL_FIELDS_FROM_LINKED_PRODUCT} from './validator'
-import {ALL_FIELDS_FROM_LINKED_PRODUCT} from "./validator";
 
 // Point to fake test resources and load some standard resources
 const dataDir = path.resolve(`${__dirname}`, './eaternity-edb-data-fake')
@@ -370,10 +369,11 @@ describe('validator', () => {
       'season-begin': 'from grandparent',
       'season-end': 'from grandparent',
       processes: [{'nutr-change-id': 1, process: 'from parent'}],
-      contains: [{
-        substance: 'from parent',
-        percentage: 4
-      }
+      contains: [
+        {
+          substance: 'from parent',
+          percentage: 4
+        }
       ]
     }
     const returnValue = pullFieldsFromParent(prods, validatedChild)
@@ -401,10 +401,11 @@ describe('validator', () => {
       'season-begin': 'from grandparent',
       'season-end': 'from grandparent',
       processes: [{process: 'from parent', 'nutr-change-id': 1}],
-      contains: [{
-        substance: 'from parent',
-        percentage: 4
-      }
+      contains: [
+        {
+          substance: 'from parent',
+          percentage: 4
+        }
       ]
     }
     const returnValue = enhanceChild(child)

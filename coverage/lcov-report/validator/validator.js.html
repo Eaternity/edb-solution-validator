@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for validator/validator.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">validator</a> validator.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>157/165</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.87% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>46/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>40/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>156/164</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1013x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-yes">115x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-yes">157x</span>
+<span class="cline-any cline-yes">2041x</span>
+<span class="cline-any cline-yes">2041x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">157x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">159x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">138x</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">1248x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// let's' try to write the complete validator in functional style
+import jsonschema from 'jsonschema'
+import {curry} from 'ramda'
+&nbsp;
+// Definition of product fields.
+&nbsp;
+/*
+These fields are mandatory and NOT allowed to pull from the linked product.
+ */
+const UNIQUE_FIELDS = ['id', 'name']
+&nbsp;
+/*
+These fields are mandatory, but are allowed to pull from the linked product.
+ */
+const MANDATORY_FIELDS_FROM_LINKED_PRODUCT = [
+  'nutrition-id',
+  'tags',
+  'perishability',
+  'co2-value'
+]
+&nbsp;
+/*
+ These fields are optional, but are allowed to pull from the linked product.
+  */
+export const OPTIONAL_FIELDS_FROM_LINKED_PRODUCT = [
+  'fao-product-id',
+  'water-scarcity-footprint-id',
+  'waste-id',
+  'season-begin',
+  'season-end',
+  'processes',
+  'allergenes',
+  'unit-weight',
+  'density',
+  'contains',
+  'production-names',
+  'production-values',
+  'conservation-names',
+  'conservation-values',
+  'processing-names',
+  'processing-values',
+  'packaging-names',
+  'packaging-values'
+]
+&nbsp;
+/*
+Every product which can be exported shall contain this fields
+ */
+export const MANDATORY_FIELDS = [
+  ...UNIQUE_FIELDS,
+  ...MANDATORY_FIELDS_FROM_LINKED_PRODUCT
+]
+&nbsp;
+/*
+All these fields are pulled from the linked product.
+ */
+export const ALL_FIELDS_FROM_LINKED_PRODUCT = [
+  ...MANDATORY_FIELDS_FROM_LINKED_PRODUCT,
+  ...OPTIONAL_FIELDS_FROM_LINKED_PRODUCT
+]
+&nbsp;
+export const orderProcesses = processes =&gt; {
+  const keys = ['process', 'nutr-change-id']
+  const orderedProcesses = processes.filter(process =&gt; process).map(process =&gt; {
+    const orderedProcess = keys.map(key =&gt; {
+      return {[key]: process[key]}
+    })
+&nbsp;
+    return Object.assign({}, ...orderedProcess)
+  })
+&nbsp;
+  return orderedProcesses
+}
+&nbsp;
+// TODO this is code duplication with above - how to handle that?
+export const orderContains = <span class="fstat-no" title="function not covered" >co</span>ntains =&gt; {
+  const keys = <span class="cstat-no" title="statement not covered" >['substance', 'percentage']</span>
+  const orderedSubstances = <span class="cstat-no" title="statement not covered" >contains</span>
+    .filter(<span class="fstat-no" title="function not covered" >su</span>bstance =&gt; <span class="cstat-no" title="statement not covered" >substance)</span>
+    .map(<span class="fstat-no" title="function not covered" >su</span>bstance =&gt; {
+      const orderedSubstance = <span class="cstat-no" title="statement not covered" >keys.map(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return {[key]: substance[key]}</span>
+      })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return Object.assign({}, ...orderedSubstance)</span>
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return orderedSubstances</span>
+}
+&nbsp;
+const _orderProduct = (orderProcesses, orderContains, orderedKeys, product) =&gt; {
+  const orderedPairs = orderedKeys
+    .filter(key =&gt; product[key] !== undefined)
+    .map(key =&gt; {
+      if (key === 'processes') {
+        return {
+          [key]: orderProcesses(product[key])
+        }
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (key === 'contains') {
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          [key]: orderContains(product[key])
+        }
+      } else {
+        return {[key]: product[key]}
+      }
+    })
+&nbsp;
+  const orderedProduct = Object.assign({}, ...orderedPairs)
+  return orderedProduct
+}
+&nbsp;
+const curriedOrderProduct = curry(_orderProduct)
+export const orderProduct = curriedOrderProduct(orderProcesses, orderContains)
+&nbsp;
+const _removeEmptyArrays = (orderedKeys, product) =&gt;
+  orderedKeys
+    .filter(key =&gt; !(Array.isArray(product[key]) &amp;&amp; product[key].length === 0))
+    .map(key =&gt; {
+      return {[key]: product[key]}
+    })
+    .reduce((obj, newField) =&gt; Object.assign(obj, newField), {})
+&nbsp;
+export const removeEmptyArrays = curry(_removeEmptyArrays)
+&nbsp;
+const _removeEmptyObjectsFromArrays = (orderedKeys, product) =&gt;
+  orderedKeys
+    // I really think we should also remove empty strings...
+    // .filter(key =&gt; product[key] !== '')
+    // and empty objects
+    // .filter(key =&gt; !(Object.keys(product[key]).length === 0 &amp;&amp;
+    //    product[key].constructor === Object)
+    // remove empty objects from arrays
+    .map(key =&gt; {
+      return Array.isArray(product[key])
+        ? {
+          [key]: product[key].filter(
+            element =&gt;
+            // remove emty objects from array
+              !(
+                Object.keys(element).length === 0 &amp;&amp;
+                  element.constructor === Object
+              )
+          )
+        }
+        : {[key]: product[key]}
+    })
+    .filter(field =&gt; field[Object.keys(field)] !== undefined)
+    .reduce((obj, newField) =&gt; Object.assign(obj, newField), {})
+&nbsp;
+export const removeEmptyObjectsFromArrays = curry(_removeEmptyObjectsFromArrays)
+&nbsp;
+export const addValidationSummary = product =&gt; {
+  // define a default validationSummary
+  const validationSummary = {
+    isValid: false,
+    parentProduct: '',
+    brokenLinks: [],
+    missingFields: [],
+    missingMandatoryFields: [],
+    validationErrors: []
+  }
+  const hasValidationSummary =
+    product.hasOwnProperty('validationSummary') &amp;&amp;
+    Object.keys(product.validationSummary).every(key =&gt; {
+      return Object.keys(validationSummary).includes(key)
+    })
+&nbsp;
+  if (!hasValidationSummary) {
+    product = {...product, validationSummary}
+  }
+&nbsp;
+  return product
+}
+&nbsp;
+const _schemaValidate = (jsonschema, addValidationSummary, schema, product) =&gt; {
+  product = addValidationSummary(product)
+  let {validationSummary} = product
+&nbsp;
+  const validationErrors = jsonschema
+    .validate(product, schema)
+    .errors.map(error =&gt; {
+      return error.stack
+    })
+&nbsp;
+  const hasValidationErrors = validationErrors.length &gt; 0
+&nbsp;
+  if (hasValidationErrors) {
+    validationSummary = {...validationSummary, validationErrors}
+  }
+&nbsp;
+  return {...product, validationSummary}
+}
+&nbsp;
+const curriedSchemaValidate = curry(_schemaValidate)
+export const schemaValidate = curriedSchemaValidate(
+  jsonschema,
+  addValidationSummary
+)
+&nbsp;
+const _addParentProduct = (addValidationSummary, prods, product) =&gt; {
+  product = addValidationSummary(product)
+  let {validationSummary} = product
+&nbsp;
+  const isLinked = product.hasOwnProperty('linked-id')
+&nbsp;
+  if (isLinked) {
+    const parentName = prods
+      .map(product =&gt; product.filename)
+      .filter(filename =&gt; filename.split('-')[0] === product['linked-id'])
+&nbsp;
+    validationSummary = {
+      ...validationSummary,
+      parentProduct: parentName[0] || ''
+    }
+  }
+&nbsp;
+  return {...product, validationSummary}
+}
+&nbsp;
+const curriedAddParentProduct = curry(_addParentProduct)
+export const addParentProduct = curriedAddParentProduct(addValidationSummary)
+&nbsp;
+const _fillValidationSummary = (
+  allFieldsFromLinkedProduct,
+  MANDATORY_FIELDS,
+  product
+) =&gt; {
+  product = addValidationSummary(product)
+  let {validationSummary} = product
+&nbsp;
+  const missingFields = allFieldsFromLinkedProduct.filter(field =&gt; {
+    return !product.hasOwnProperty(field)
+  })
+&nbsp;
+  const missingMandatoryFields = missingFields.filter(field =&gt; {
+    return MANDATORY_FIELDS.includes(field)
+  })
+&nbsp;
+  const fieldsMissing = missingFields.length &gt; 0
+  const mandatoryFieldsMissing = missingMandatoryFields.length &gt; 0
+&nbsp;
+  if (fieldsMissing) {
+    validationSummary = {...validationSummary, missingFields}
+  }
+&nbsp;
+  if (mandatoryFieldsMissing) {
+    validationSummary = {...validationSummary, missingMandatoryFields}
+  }
+&nbsp;
+  return {...product, validationSummary}
+}
+&nbsp;
+const curriedFillValidationSummary = curry(_fillValidationSummary)
+export const fillValidationSummary = curriedFillValidationSummary(
+  ALL_FIELDS_FROM_LINKED_PRODUCT,
+  MANDATORY_FIELDS
+)
+&nbsp;
+const _validateNutritionId = (addValidationSummary, nutrs, product) =&gt; {
+  product = addValidationSummary(product)
+  let {validationSummary} = product
+  const {brokenLinks} = validationSummary
+&nbsp;
+  const hasNutritionId = product.hasOwnProperty('nutrition-id')
+&nbsp;
+  if (hasNutritionId) {
+    const nutritionId = product['nutrition-id']
+    const linkedNutritionIdExists = nutrs.some(nutrObj =&gt; {
+      return nutrObj.id === nutritionId
+    })
+&nbsp;
+    if (!linkedNutritionIdExists) {
+      validationSummary = {
+        ...validationSummary,
+        brokenLinks: [...brokenLinks, 'nutrition-id']
+      }
+    }
+  }
+&nbsp;
+  return {...product, validationSummary}
+}
+&nbsp;
+const curriedValidateNutritionId = curry(_validateNutritionId)
+export const validateNutritionId = curriedValidateNutritionId(
+  addValidationSummary
+)
+&nbsp;
+const _validateNutrChangeId = (addValidationSummary, nutrChange, product) =&gt; {
+  product = addValidationSummary(product)
+  let {validationSummary} = product
+  const {brokenLinks} = validationSummary
+&nbsp;
+  const hasProcesses = product.hasOwnProperty('processes') &amp;&amp; product.processes
+&nbsp;
+  const hasNutritionChangeId = hasProcesses
+    ? product.processes.length &gt; 0 &amp;&amp;
+      product.processes[0].hasOwnProperty('nutr-change-id')
+    : false
+&nbsp;
+  if (hasNutritionChangeId) {
+    const {processes} = product
+    const allNutritionChangeIds = processes.map(processesObj =&gt; {
+      return processesObj['nutr-change-id']
+    })
+&nbsp;
+    const linkedNutritionChangeIdsExist = allNutritionChangeIds.every(
+      nutritionChangeId =&gt; {
+        return nutrChange.some(nutrChangeObj =&gt; {
+          return nutrChangeObj.id === nutritionChangeId
+        })
+      }
+    )
+&nbsp;
+    if (!linkedNutritionChangeIdsExist) {
+      validationSummary = {
+        ...validationSummary,
+        brokenLinks: [...brokenLinks, 'nutr-change-id']
+      }
+    }
+  }
+&nbsp;
+  return {...product, validationSummary}
+}
+&nbsp;
+const curriedValidateNutritionChangeId = curry(_validateNutrChangeId)
+export const validateNutrChangeId = curriedValidateNutritionChangeId(
+  addValidationSummary
+)
+&nbsp;
+export const classify = product =&gt; {
+  let {validationSummary} = product
+&nbsp;
+  if (!validationSummary) {
+    throw new Error('Cannot classify product without validationSummary')
+  }
+&nbsp;
+  const {
+    brokenLinks,
+    missingMandatoryFields,
+    validationErrors
+  } = validationSummary
+  const hasBrokenLinks = brokenLinks.length &gt; 0
+  const hasMissingMandatoryFields = missingMandatoryFields.length &gt; 0
+  const hasValidationErrors = validationErrors.length &gt; 0
+  const isValid =
+    !hasBrokenLinks &amp;&amp; !hasMissingMandatoryFields &amp;&amp; !hasValidationErrors
+  validationSummary = {...validationSummary, isValid}
+  return {...product, validationSummary}
+}
+&nbsp;
+const _getFieldFromParent = (prods, parentProduct, field) =&gt; {
+  const validatedParentProduct = addParentProduct(prods, parentProduct)
+  const {validationSummary} = validatedParentProduct
+  let pulledField = {}
+&nbsp;
+  const fieldExistsInParent = parentProduct.hasOwnProperty(field)
+  // parentProduct is '' (falsy) when no linked-id is given or no product with
+  // the linked id exists
+  const isLinked = validationSummary.parentProduct
+&nbsp;
+  if (fieldExistsInParent) {
+    pulledField = {[field]: parentProduct[field]}
+  } else if (isLinked) {
+    const grandParent = prods.filter(product =&gt; {
+      return product.filename === validationSummary.parentProduct
+    })[0]
+    const validatedGrandParent = addParentProduct(prods, grandParent)
+    return _getFieldFromParent(prods, validatedGrandParent, field)
+  } else {
+    pulledField = {[field]: 'NOT_RESOLVABLE'}
+  }
+&nbsp;
+  return pulledField
+}
+&nbsp;
+export const getFieldFromParent = curry(_getFieldFromParent)
+&nbsp;
+const _pullFieldsFromParent = (getFieldFromParent, prods, validatedProduct) =&gt; {
+  const {missingFields} = validatedProduct.validationSummary
+&nbsp;
+  const pulledFields = missingFields
+    .map(field =&gt; getFieldFromParent(prods, validatedProduct, field))
+    .filter(field =&gt; field[Object.keys(field)] !== 'NOT_RESOLVABLE')
+    .reduce((prev, curr) =&gt; ({...prev, ...curr}), {})
+&nbsp;
+  return pulledFields
+}
+&nbsp;
+const curriedPullFieldsFromParent = curry(_pullFieldsFromParent)
+export const pullFieldsFromParent = curriedPullFieldsFromParent(
+  getFieldFromParent
+)
+&nbsp;
+const _pullAndAddFieldsFromParent = (pullFieldsFromParent, prods, product) =&gt; {
+  const pulledFields = pullFieldsFromParent(prods, product)
+  return {...product, ...pulledFields}
+}
+&nbsp;
+const curriedPullAndAddFieldsFromParent = curry(_pullAndAddFieldsFromParent)
+export const pullAndAddFieldsFromParent = curriedPullAndAddFieldsFromParent(
+  pullFieldsFromParent
+)
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 09 2017 09:28:13 GMT+0100 (CET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

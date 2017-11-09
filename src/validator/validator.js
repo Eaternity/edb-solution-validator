@@ -7,10 +7,7 @@ import {curry} from 'ramda'
 /*
 These fields are mandatory and NOT allowed to pull from the linked product.
  */
-const UNIQUE_FIELDS = [
-  'id',
-  'name',
-]
+const UNIQUE_FIELDS = ['id', 'name']
 
 /*
 These fields are mandatory, but are allowed to pull from the linked product.
@@ -49,12 +46,18 @@ export const OPTIONAL_FIELDS_FROM_LINKED_PRODUCT = [
 /*
 Every product which can be exported shall contain this fields
  */
-export const MANDATORY_FIELDS = [...UNIQUE_FIELDS, ...MANDATORY_FIELDS_FROM_LINKED_PRODUCT]
+export const MANDATORY_FIELDS = [
+  ...UNIQUE_FIELDS,
+  ...MANDATORY_FIELDS_FROM_LINKED_PRODUCT
+]
 
 /*
 All these fields are pulled from the linked product.
  */
-export const ALL_FIELDS_FROM_LINKED_PRODUCT = [...MANDATORY_FIELDS_FROM_LINKED_PRODUCT, ...OPTIONAL_FIELDS_FROM_LINKED_PRODUCT]
+export const ALL_FIELDS_FROM_LINKED_PRODUCT = [
+  ...MANDATORY_FIELDS_FROM_LINKED_PRODUCT,
+  ...OPTIONAL_FIELDS_FROM_LINKED_PRODUCT
+]
 
 export const orderProcesses = processes => {
   const keys = ['process', 'nutr-change-id']
@@ -72,13 +75,15 @@ export const orderProcesses = processes => {
 // TODO this is code duplication with above - how to handle that?
 export const orderContains = contains => {
   const keys = ['substance', 'percentage']
-  const orderedSubstances = contains.filter(substance => substance).map(substance => {
-    const orderedSubstance = keys.map(key => {
-      return {[key]: substance[key]}
-    })
+  const orderedSubstances = contains
+    .filter(substance => substance)
+    .map(substance => {
+      const orderedSubstance = keys.map(key => {
+        return {[key]: substance[key]}
+      })
 
-    return Object.assign({}, ...orderedSubstance)
-  })
+      return Object.assign({}, ...orderedSubstance)
+    })
 
   return orderedSubstances
 }
@@ -129,13 +134,13 @@ const _removeEmptyObjectsFromArrays = (orderedKeys, product) =>
       return Array.isArray(product[key])
         ? {
           [key]: product[key].filter(
-              element =>
-                // remove emty objects from array
-                !(
-                  Object.keys(element).length === 0 &&
+            element =>
+            // remove emty objects from array
+              !(
+                Object.keys(element).length === 0 &&
                   element.constructor === Object
-                )
-            )
+              )
+          )
         }
         : {[key]: product[key]}
     })
@@ -215,7 +220,11 @@ const _addParentProduct = (addValidationSummary, prods, product) => {
 const curriedAddParentProduct = curry(_addParentProduct)
 export const addParentProduct = curriedAddParentProduct(addValidationSummary)
 
-const _fillValidationSummary = (allFieldsFromLinkedProduct, MANDATORY_FIELDS, product) => {
+const _fillValidationSummary = (
+  allFieldsFromLinkedProduct,
+  MANDATORY_FIELDS,
+  product
+) => {
   product = addValidationSummary(product)
   let {validationSummary} = product
 
@@ -378,7 +387,9 @@ const _pullFieldsFromParent = (getFieldFromParent, prods, validatedProduct) => {
 }
 
 const curriedPullFieldsFromParent = curry(_pullFieldsFromParent)
-export const pullFieldsFromParent = curriedPullFieldsFromParent(getFieldFromParent)
+export const pullFieldsFromParent = curriedPullFieldsFromParent(
+  getFieldFromParent
+)
 
 const _pullAndAddFieldsFromParent = (pullFieldsFromParent, prods, product) => {
   const pulledFields = pullFieldsFromParent(prods, product)
