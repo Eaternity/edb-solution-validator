@@ -2,7 +2,7 @@
   "name": "edb-solution-validator",
   "version": "1.0.0",
   "description": "Edb-solution validator",
-  "main": "index.js",
+  "main": "dist/index.js",
   "lint-staged": {
     "src/**/*.js": ["npm run build", "eslint --fix", "git add"]
   },
@@ -10,7 +10,7 @@
     "testMatch": ["<rootDir>/src/**/*.test.js"]
   },
   "scripts": {
-    "test": "jest src --watch",
+    "test": "jest src --coverage",
     "lint": "node_modules/.bin/eslint ./src",
     "build": "npx babel src/ -d dist/ --source-maps",
     "debug": "npm run build && inspect dist/debug.js",
